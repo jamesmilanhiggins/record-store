@@ -1,0 +1,6 @@
+<h3>cart</h3>
+<ul>
+  <% @order.order_items.each do |item| %>
+    <li><%= item.album.title %> (<%= item.quantity %>) - $<%= item.quantity * item.album.price%></li>
+  <% end %>
+</ul>

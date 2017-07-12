@@ -17,12 +17,18 @@
         <ul>
           <% if current_user && current_user.admin %>
             <li>
+              <%= link_to "cart(#{cart.order_items.count})", account_order_path(current_user.account, cart)%>
+            </li>
+            <li>
               <%= link_to "admin panel", rails_admin_path %>
             </li>
             <li>
               <%= link_to "sign out", destroy_user_session_path, method: :delete %>
             </li>
           <% elsif current_user %>
+            <li>
+              <%= link_to "cart(#{cart.order_items.count})", account_order_path(current_user.account, cart)%>
+            </li>
             <li>
               <%= link_to "profile", account_path(current_user.account) %>
             </li>
