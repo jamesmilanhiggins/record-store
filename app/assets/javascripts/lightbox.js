@@ -5,6 +5,10 @@ jQuery.fn.hideOnClick = function() {
    return this;
 }
 
+$(document).on('turbolinks:load', function() {
+  $('.lightbox').hideOnClick();
+});
+
 $(document).ready(function() {
   $('.lightbox').hideOnClick();
 });

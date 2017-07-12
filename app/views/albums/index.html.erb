@@ -20,8 +20,8 @@
     <%= link_to album_path(album), remote: true do %>
       <%= image_tag album.img_src, size: "100x100" %>
     <% end %>
+    <p id="item-quantity"><%= album.quantity %></p>
 
-    <%= album.quantity  %>
     <%= form_for [cart, @order_item], remote: true do |f| %>
       <%= f.hidden_field :album_id, value: album.id %>
       <%= f.number_field :quantity %>
