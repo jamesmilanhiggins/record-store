@@ -1,6 +1,27 @@
+<div class="lightbox">
+  <div class="row">
+    <div class="col-sm-6" id="album-cover">
+      <%= image_tag "cover.jpg", size: "600x600" %>
+    </div>
+    <div class="col-sm-6" id="album-details">
+      <h3 id="title">Currents</h3>
+      <p id="artist">by Tame Impala</p>
+      <ul>
+        <li>Let it Happen - 3:16</li>
+        <li>Nangs - 4:03</li>
+        <li>The Moment - 3:54</li>
+      </ul>
+    </div>
+  </div>
+</div>
 <% @albums.each do |album| %>
   <div class="album-cover">
-    <%= image_tag album.img_src, size: "100x100" %>
+    <%= album.title %>
+    <%= link_to album_path(album), remote: true do %>
+      <%= image_tag album.img_src, size: "100x100" %>
+    <% end %>
+
+    <%= album.quantity  %>
     <%= form_for [cart, @order_item], remote: true do |f| %>
       <%= f.hidden_field :album_id, value: album.id %>
       <%= f.number_field :quantity %>
