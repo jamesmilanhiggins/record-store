@@ -1,0 +1,28 @@
+- build schema
+  - add devise
+- seed database
+- implement index page
+- rails admin
+  - mark items as onsale
+- navbar with cart, sign-up , sign-in
+- add Cart
+  - checkout process, goes to stripe
+  - marks order as complete,
+  - lowers records quantity
+  - creates new order for that user
+- AJAX
+  - hide album art and show songs in that record
+  - add to cart
+  - update in-cart details
+  - edit cart quantity/details
+- click album to show songs in lightbox
+- pagination : gem of kamineri
+- add a couple filters/ scopes
+  -recent products
+  - price low
+  - price high
+
+- add search function
+- tests
+- add readme
+- deploy
