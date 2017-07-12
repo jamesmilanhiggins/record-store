@@ -1,0 +1,5 @@
+<% @albums.each do |album| %>
+  <div class="album-cover">
+    <%= image_tag album.img_src, size: "100x100" %>
+  </div>
+<% end %>
