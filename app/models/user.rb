@@ -1,5 +1,10 @@
 class User < ApplicationRecord
-  belongs_to :account, foreign_key: :account_id, optional: true
+  has_one :account
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+ after_save :add_account
+
+ def add_account
+   Account.create(user_id: self.id)
+ end
 end

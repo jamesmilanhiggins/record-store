@@ -1,5 +1,4 @@
 Album.destroy_all
-Song.destroy_all
 User.destroy_all
 
 user = User.create(

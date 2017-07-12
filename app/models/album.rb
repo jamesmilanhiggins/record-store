@@ -1,6 +1,6 @@
 class Album < ApplicationRecord
-    has_many :songs
-    has_many :order_items
+    has_many :songs, dependent: :destroy
+    has_many :order_items, dependent: :destroy
     has_and_belongs_to_many :accounts
 
     validates :title, :artist, :price, :genre, :quantity, presence: true
