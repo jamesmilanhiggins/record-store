@@ -7,6 +7,6 @@ class Album < ApplicationRecord
     validates :price, :quantity, numericality: true
     validates :sale_percentage, numericality: {
       less_than: 101,
-      greater_than: 0
+      greater_than_or_equal_to: 0
     }
 end

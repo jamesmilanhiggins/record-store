@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712162031) do
+ActiveRecord::Schema.define(version: 20170712171224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20170712162031) do
     t.integer "quantity"
     t.string "img_src", default: "cover.jpg"
     t.boolean "on_sale", default: false
-    t.integer "sale_percentage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "sale_percentage", default: "0.0"
   end
 
   create_table "order_items", force: :cascade do |t|
