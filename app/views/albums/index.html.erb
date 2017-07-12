@@ -1,5 +1,10 @@
 <% @albums.each do |album| %>
   <div class="album-cover">
     <%= image_tag album.img_src, size: "100x100" %>
+    <%= form_for [cart, @order_item], remote: true do |f| %>
+      <%= f.hidden_field :album_id, value: album.id %>
+      <%= f.number_field :quantity %>
+      <%= f.submit "Add to cart", class: 'add-to-cart' %>
+    <% end %>
   </div>
 <% end %>
