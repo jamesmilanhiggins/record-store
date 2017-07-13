@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :find_cart_item_by_id
   helper_method :valid_cart_total?
   helper_method :cart_quantity
+  helper_method :item_total_price
 
   def cart
     current_user.account.orders.where("status = 'Active'").first if current_user
@@ -43,6 +44,11 @@ class ApplicationController < ActionController::Base
     end
     album = Album.find(new_order[:album_id].to_i)
     album.quantity >= requested_stock
+  end
+
+  def item_total_price(item_id)
+    item = cart.order_items.find(item_id)
+    item.quantity * item.album.price
   end
 
   def cart_quantity(cart, album_id)

@@ -3,7 +3,14 @@
   <% @order.order_items.each do |item| %>
     <li id="item-<%=item.id %>">
       <p>
-        <%= item.album.title %> (<%= item.quantity %>) - $<%= item.quantity * item.album.price%>
+        <%= item.album.title %> (<%= item.quantity %>) - $<span class="item-price"><%= render partial: "layouts/item_price", locals: { item: item} %></span>
+      </p>
+      <p>
+        <%= form_for [@order, item], remote: true do |f| %>
+          <%= f.hidden_field :album_id, value: item.album.id %>
+          <%= f.number_field :quantity, value: item.quantity, in: 1.0..item.album.quantity %>
+          <%= f.submit "Update cart", class: 'add-to-cart' %>
+        <% end %>
       </p>
       <p><%= link_to "Delete", order_order_item_path(@order, item), method: :delete, remote: true %></p>
     </li>
