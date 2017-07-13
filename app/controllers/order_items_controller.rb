@@ -24,6 +24,17 @@ class OrderItemsController < ApplicationController
       redirect_to albums_path
     end
   end
+
+  def destroy
+    @order = Order.find(params[:order_id])
+    order_item = @order.order_items.find(params[:id])
+    @order_id = order_item.id
+    order_item.destroy
+    respond_to do |format|
+      format.js
+    end
+
+  end
   private
   def order_item_params
     params.require(:order_item).permit(:quantity, :album_id)

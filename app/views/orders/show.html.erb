@@ -1,9 +1,15 @@
 <h3>cart</h3>
 <ul>
   <% @order.order_items.each do |item| %>
-    <li><%= item.album.title %> (<%= item.quantity %>) - $<%= item.quantity * item.album.price%></li>
+    <li id="item-<%=item.id %>">
+      <p>
+        <%= item.album.title %> (<%= item.quantity %>) - $<%= item.quantity * item.album.price%>
+      </p>
+      <p><%= link_to "Delete", order_order_item_path(@order, item), method: :delete, remote: true %></p>
+    </li>
+
   <% end %>
 </ul>
 
-
+<p>The total is:<span id="cart-total"> <%= render "layouts/cart_price"  %></span> </p>
 <%= link_to "Checkout", new_account_order_path(current_user.account) %>
