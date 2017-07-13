@@ -3,8 +3,8 @@ Thursday
 /////
 
 * Limit max order items by stock
-- edit cart with ajax,
-*  cart with ajax, delete
+* edit cart with ajax,
+* cart with ajax, delete
 * show cart total with ajax above checkout button
 * combine duplicate order_items
 - add authorization
