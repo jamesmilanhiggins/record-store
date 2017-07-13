@@ -50,7 +50,7 @@ _Please contact James Higgins at James.Milan.Higgins@gmail.com if you have any q
 
 Copyright (c) 2017 **_James Higgins & Aubrey Masten**
 
-![Homepage](home.jpg)
+![Homepage](images/home.jpg)
 ![Album Details](album_detail.jpg)
-![Admin Page](admin.jpg)
+![Admin Page](app/assets/images/admin.jpg)
 ![Cart View](cart.jpg)
