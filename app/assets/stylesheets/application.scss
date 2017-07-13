@@ -15,7 +15,10 @@
  @import "bootstrap";
 
 .lightbox {
-  position: absolute;
+  background-color: white;
+  z-index: 1;
+  display: none;
+  position: fixed;
   width: 80%;
   margin-left: 10%;
   margin-top: 10%;
@@ -40,6 +43,15 @@
 h1 {
   text-align: center;
 }
+
+.col-md-4 {
+  margin-bottom: 30px;
+}
+
+h4 {
+  margin-bottom: 0px;
+}
+
 
 .links {
   text-align: center;

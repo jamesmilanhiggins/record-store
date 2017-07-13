@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-sm-8" id="album-cover">
+    <%= image_tag "cover.jpg", size: "600x600" %>
+  </div>
+  <div class="col-sm-4" id="album-details">
+    <h3 id="title"><%= album.title %></h3>
+    <p id="artist">by <%= album.artist %></p>
+    <ul>
+      <% album.songs.each do |song|%>
+        <li><%= song.name %> - <%= song.length%></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
