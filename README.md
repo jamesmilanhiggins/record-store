@@ -48,7 +48,7 @@ _Please contact James Higgins at James.Milan.Higgins@gmail.com if you have any q
 
 *This software is licensed under MIT license.*
 
-Copyright (c) 2017 **_James Higgins & Aubrey Masten**
+Copyright (c) 2017 **_James Higgins & Aubrey Masten_**
 
 ![Homepage](app/assets/images/home.jpg)
 ![Album Details](app/assets/images/album_detail.jpg)
