@@ -9,4 +9,12 @@ class Album < ApplicationRecord
       less_than: 101,
       greater_than_or_equal_to: 0
     }
+
+  scope :search, -> (query) do
+    albums = Album.all
+    albums.find_all do |album|
+      album.title.downcase.match("#{query.downcase}") ||
+      album.artist.downcase.match("#{query.downcase}")
+    end
+  end
 end

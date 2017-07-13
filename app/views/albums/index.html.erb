@@ -1,30 +1,14 @@
-<% @albums.each do |album| %>
-  <div class="col-md-4">
-    <div class="album-cover">
-      <%= link_to album_path(album), remote: true do %>
-        <%= image_tag album.img_src, class: "media-object", size: "300x300" %>
-      <% end %>
-    </div>
-    <div>
-      <h4>
-        <%= album.title %>
-      </h4>
-      <span class="artist"><%= album.artist%></span>
-      <p id="item-quantity">
-        In Stock: <%= album.quantity %> -
-        In Cart:
-        <span class="cart-quantity">
-          <%= render partial: "layouts/cart_quantity", locals: {cart: cart, album_id: album.id} %>
-        </span>
-      </p>
-      <% if current_user %>
-        <%= form_for [cart, @order_item], remote: true do |f| %>
-          <%= f.hidden_field :album_id, value: album.id %>
-          <%= f.number_field :quantity %>
-          <%= f.submit "Add to cart", class: 'add-to-cart' %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+<div class="links">
+<ul>
+  <li>
+    <%= form_tag albums_path, method: :get, remote: true do %>
+      <%= text_field_tag :query %>
+      <%= submit_tag "search" %>
+    <% end %>
+  </li>
+</ul>
+</div>
 
-<% end %>
+<div id="albums">
+  <%= render partial: "albums", locals: { albums: @albums }%>
+</div>

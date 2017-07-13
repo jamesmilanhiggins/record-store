@@ -1,0 +1,1 @@
+$('#albums').empty().append("<%= j render partial: 'albums', locals: { albums: Album.search(@query) }%>")
