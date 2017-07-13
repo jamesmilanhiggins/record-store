@@ -32,7 +32,7 @@
                 <%= render partial: "layouts/cart" %>
               </li>
               <li>
-                <%= link_to "profile", account_path(current_user.account) %>
+                <%= link_to "profile", edit_user_registration_path %>
               </li>
               <li>
                 <%= link_to "sign out", destroy_user_session_path, method: :delete %>
