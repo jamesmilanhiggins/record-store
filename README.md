@@ -1,6 +1,6 @@
 # James and Aubrey's Record Store
 
-#### _This e-commerce site lets users purchase albums. _
+#### _This e-commerce site lets users purchase albums._
 
 Visit Live Site [here](https://james-and-aubrey-record-store.herokuapp.com/)
 
