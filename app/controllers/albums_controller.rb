@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   def index
     @albums = Album.all
-    @order_item = cart.order_items.new
+    @order_item = cart.order_items.new if current_user
   end
 
   def show

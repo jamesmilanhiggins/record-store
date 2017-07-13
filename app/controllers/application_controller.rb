@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :cart_total_price
 
   def cart
-    current_user.account.orders.where("status = 'Active'").first
+    current_user.account.orders.where("status = 'Active'").first if current_user
   end
 
   def update_item_stock(order)
