@@ -1,1 +1,3 @@
 $('body').find("#item-<%=@order_id%>").remove()
+$('body').find('.cart').empty().append("<%= j render 'layouts/cart'%>")
+$('body').find('#cart-total').text("<%= j render 'layouts/cart_price'%>")

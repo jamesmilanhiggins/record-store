@@ -19,9 +19,8 @@ class ApplicationController < ActionController::Base
   end
 
   def cart_total_price
-    cart.order_items.sum do |item|
-      item.quantity * item.album.price
-    end
+    total = cart.order_items.sum { |item| item.quantity * item.album.price }
+    total > 0 ? total : 0.00
   end
 
   def cart_count

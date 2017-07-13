@@ -11,5 +11,5 @@
   <% end %>
 </ul>
 
-<p>The total is:<span id="cart-total"> <%= render "layouts/cart_price"  %></span> </p>
+<p>The total is: $<span id="cart-total"><%= render "layouts/cart_price"  %></span> </p>
 <%= link_to "Checkout", new_account_order_path(current_user.account) %>
