@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all
+    @albums = Album.in_stock
     @order_item = cart.order_items.new if current_user
     if params[:query] && params[:query].gsub!(/[^a-z0-9 ]/i, "") != ""
       @query = params[:query]

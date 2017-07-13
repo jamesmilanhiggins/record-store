@@ -11,10 +11,17 @@ class Album < ApplicationRecord
     }
 
   scope :search, -> (query) do
-    albums = Album.all
+    albums = Album.in_stock
     albums.find_all do |album|
       album.title.downcase.match("#{query.downcase}") ||
       album.artist.downcase.match("#{query.downcase}")
+    end
+  end
+
+  scope :in_stock, -> do
+    albums = Album.all
+    albums.find_all do |album|
+      album.quantity > 0
     end
   end
 end

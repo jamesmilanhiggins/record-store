@@ -1,5 +1,5 @@
 <% albums.each do |album| %>
-  <div class="col-md-4">
+  <div class="col-md-4" id="album-<%= album.id%>">
     <div class="album-cover">
       <%= link_to album_path(album), remote: true do %>
         <%= image_tag album.img_src, class: "media-object", size: "300x300" %>
