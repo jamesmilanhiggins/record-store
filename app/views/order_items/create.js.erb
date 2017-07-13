@@ -1,1 +1,5 @@
 $('body').find('.cart').empty().append("<%= j render 'layouts/cart'%>")
+
+$('body').find("#album-<%=@order_item.album_id%>")
+  .find('.cart-quantity')
+  .text("<%= j render partial: 'layouts/cart_quantity', locals: {cart: @order, album_id: @order_item.album_id}%>")
