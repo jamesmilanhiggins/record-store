@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :cart
   helper_method :update_item_stock
   helper_method :cart_total_price
+  helper_method :cart_count
 
   def cart
     current_user.account.orders.where("status = 'Active'").first if current_user
@@ -17,6 +18,12 @@ class ApplicationController < ActionController::Base
   def cart_total_price
     cart.order_items.sum do |item|
       item.quantity * item.album.price
+    end
+  end
+
+  def cart_count
+    cart.order_items.sum do |item|
+      item.quantity
     end
   end
 end
