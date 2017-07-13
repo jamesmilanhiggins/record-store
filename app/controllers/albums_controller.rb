@@ -1,4 +1,6 @@
 class AlbumsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @albums = Album.in_stock
     @order_item = cart.order_items.new if current_user

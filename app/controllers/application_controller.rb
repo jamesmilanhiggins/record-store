@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :valid_cart_total?
   helper_method :cart_quantity
   helper_method :item_total_price
+  before_action :authenticate_user!
 
   def cart
     current_user.account.orders.where("status = 'Active'").first if current_user
