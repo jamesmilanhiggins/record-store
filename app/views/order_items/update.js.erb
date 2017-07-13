@@ -1,4 +1,10 @@
-$('body').find("#item-<%=@order_item.id%>").find('.item-price').text("<%= j render partial: 'layouts/item_price', locals: {item: @order_item}%>")
-
+$('body')
+  .find("#item-<%=@order_item.id%>")
+  .find('.item-price')
+  .text("<%= j render partial: 'layouts/item_price', locals: {item: @order_item}%>")
+$('body')
+  .find("#item-<%=@order_item.id%>")
+  .find('.item-quantity')
+  .text("<%= j render partial: 'layouts/item_quantity', locals: {item: @order_item}%>")
 $('body').find('.cart').empty().append("<%= j render 'layouts/cart'%>")
 $('body').find('#cart-total').text("<%= j render 'layouts/cart_price'%>")

@@ -3,7 +3,13 @@
   <% @order.order_items.each do |item| %>
     <li id="item-<%=item.id %>">
       <p>
-        <%= item.album.title %> (<%= item.quantity %>) - $<span class="item-price"><%= render partial: "layouts/item_price", locals: { item: item} %></span>
+        <%= item.album.title %>
+          (<span class="item-quantity"><%= render partial: "layouts/item_quantity", locals: { item: item} %></span>)
+        <p>Cost: $
+          <span class="item-price">
+            <%= render partial: "layouts/item_price", locals: { item: item} %>
+          </span>
+        </p>
       </p>
       <p>
         <%= form_for [@order, item], remote: true do |f| %>
